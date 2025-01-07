@@ -9,10 +9,10 @@ router.get('/', postsController.index);
 router.get('/:id', postsController.show);
 
 //store
-router.put('/', postsController.store);
+router.post('/', postsController.store);
 
 //update
-router.patch('/:id', postsController.update);
+router.put('/:id', postsController.update);
 
 //modify
 router.patch('/:id', postsController.modify);
