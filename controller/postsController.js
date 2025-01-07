@@ -2,10 +2,12 @@ const posts = require('../data/posts')
 
 const index = (req, res) => {
   let postsList = posts
-  const {tag} = req.query   
+  const {tag} = req.query 
+
   
   if (tag) {
-    postsList = posts.filter(post => post.tags.includes(tag))
+    const normalizeTag = tag.toLowerCase();
+    postsList = posts.filter(post => post.tags.map(tag => tag.toLowerCase()).includes(normalizeTag))
   }  
 
   res.json(postsList)
