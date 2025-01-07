@@ -25,6 +25,8 @@ const destroy = (req, res) => {
   const filteredPosts = posts.find(post => post.id == req.params.id)
 
   posts.splice(posts.indexOf(filteredPosts), 1)
+  console.log(posts);
+  
   res.sendStatus(204)
 }
 
