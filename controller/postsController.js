@@ -5,7 +5,8 @@ const index = (req, res) => {
 }
 
 const show = (req, res) => {
-  res.json('Visualizzo un post in base al suo id')
+  const filteredPosts = posts.find(post => post.id == req.params.id)
+  res.json(filteredPosts)
 }
 
 const store = (req, res) => {
@@ -21,7 +22,10 @@ const modify = (req, res) => {
 }
 
 const destroy = (req, res) => {
-  res.send("Rimuovo un post in base all'id")
+  const filteredPosts = posts.find(post => post.id == req.params.id)
+
+  posts.splice(posts.indexOf(filteredPosts), 1)
+  res.sendStatus(204)
 }
 
 module.exports = {
