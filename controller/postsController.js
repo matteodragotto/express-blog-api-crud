@@ -1,11 +1,11 @@
 const posts = require('../data/posts')
 
 const index = (req, res) => {
-  res.send('Lista dei post')
+  res.json(posts)
 }
 
 const show = (req, res) => {
-  res.send('Visualizzo un post in base al suo id')
+  res.json('Visualizzo un post in base al suo id')
 }
 
 const store = (req, res) => {
