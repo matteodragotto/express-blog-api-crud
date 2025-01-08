@@ -28,6 +28,8 @@ const show = (req, res) => {
 }
 
 const store = (req, res) => {
+  console.log(req.body);
+  
   res.send('Aggiungo un post')
 }
 
