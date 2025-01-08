@@ -44,7 +44,23 @@ const store = (req, res) => {
 }
 
 const update = (req, res) => {
-  res.send("Modifico un post in base all'id")
+  const id =  req.params.id
+  const post = posts.find(post => post.id == id)
+
+  if(!post){
+    res.status(404)
+    return res.json({
+      message: 'Partecipante non trovato',
+      status: 404,
+      error: 'Not Found'
+    })
+  };
+
+  for (let key in req.body) {
+    post[key] = req.body[key]
+  }
+
+  res.json(post)
 }
 
 const modify = (req, res) => {
