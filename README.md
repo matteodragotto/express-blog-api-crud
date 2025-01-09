@@ -61,4 +61,4 @@ Dopo aver completato tutte le operazioni CRUD, completiamo le nostre API inseren
 - Se viene generato un errore, un middleware si occuperà di rispondere con un messaggio e uno status appropriato.
 
 ### Bonus
-Creare un middleware che in caso di inserimento/modifica contolli la validità dei dati
+Creare un middleware che in caso di inserimento/modifica controlli la validità dei dati
