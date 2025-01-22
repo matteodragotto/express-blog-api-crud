@@ -8,7 +8,7 @@ const notFound = require('./middlewares/notFound')
 const errorsHandler = require('./middlewares/errorsHandler')
 
 app.use(cors({
-  origin: 'http://localhost:5173/'
+  origin: 'http://localhost:5173'
 }))
 
 app.use(express.json())
