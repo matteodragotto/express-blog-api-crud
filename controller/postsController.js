@@ -2,20 +2,20 @@ const posts = require('../data/posts')
 
 const index = (req, res) => {
   let postsList = posts
-  const {tag} = req.query 
+  const { tag } = req.query
 
-  
+
   if (tag) {
     const normalizeTag = tag.toLowerCase();
     postsList = posts.filter(post => post.tags.map(tag => tag.toLowerCase()).includes(normalizeTag))
-  }  
+  }
 
   res.json(postsList)
 }
 
 const show = (req, res) => {
   const filteredPosts = posts.find(post => post.id == req.params.id)
-  
+
   if (!filteredPosts) {
     res.status(404)
     return res.json({
@@ -39,15 +39,14 @@ const store = (req, res) => {
 
   posts.push(newPost);
 
-  res.status(201)  
-  res.json(posts)
+  res.status(201).json(posts)
 }
 
 const update = (req, res) => {
-  const id =  req.params.id
+  const id = req.params.id
   const post = posts.find(post => post.id == id)
 
-  if(!post){
+  if (!post) {
     res.status(404)
     return res.json({
       message: 'Partecipante non trovato',
@@ -81,7 +80,7 @@ const destroy = (req, res) => {
 
   posts.splice(posts.indexOf(filteredPosts), 1)
   console.log(posts);
-  
+
   res.sendStatus(204)
 }
 

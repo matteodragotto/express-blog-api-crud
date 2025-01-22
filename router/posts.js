@@ -10,7 +10,7 @@ router.get('/', postsController.index);
 router.get('/:id', postsController.show);
 
 //store
-router.post('/', dataValidation, postsController.store);
+router.post('/', postsController.store);
 
 //update
 router.put('/:id', dataValidation, postsController.update);

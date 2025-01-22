@@ -11,6 +11,8 @@ app.use(cors({
   origin: 'http://localhost:5173'
 }))
 
+app.use(express.static('public'));
+
 app.use(express.json())
 
 app.get('/', (req, res) => {
